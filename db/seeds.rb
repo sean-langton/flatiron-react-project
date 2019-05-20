@@ -46,6 +46,26 @@ teamplayer_list = [
   [3,6]
 ]
 
+score_list = [
+  [-2, 1, 1],
+  [0, 2, 1],
+  [-1, 3, 1],
+  [1, 4, 1],
+  [-1, 5, 1],
+  [-1, 6, 1],
+  [0, 7, 1],
+  [1, 8, 1],
+  [0, 9, 1],
+  [-2, 1, 2],
+  [0, 2, 2],
+  [-1, 3, 2],
+  [1, 4, 2],
+  [-1, 5, 2],
+  [-1, 6, 2],
+  [0, 7, 2],
+  [1, 8, 2],
+  [0, 9, 2]
+  ]
 
 tournament_list.each do |name, date, per_team, entry_code|
   Tournament.create(name: name, date: date, per_team: per_team, entry_code: entry_code)
@@ -65,4 +85,8 @@ end
 
 teamplayer_list.each do |team_id, player_id|
   Teamplayer.create(team_id: team_id, player_id: player_id)
+end
+
+score_list.each do |score, holes_id, player_id|
+  Score.create(score: score, hole_id: holes_id, player_id: player_id)
 end

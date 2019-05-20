@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2019_05_17_203358) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "score"
-    t.integer "holes_id"
+    t.integer "hole_id"
     t.integer "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["holes_id"], name: "index_scores_on_holes_id"
+    t.index ["hole_id"], name: "index_scores_on_hole_id"
     t.index ["player_id"], name: "index_scores_on_player_id"
   end
 

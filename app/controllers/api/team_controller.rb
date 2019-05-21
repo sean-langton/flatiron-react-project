@@ -1,4 +1,4 @@
-class HoleController < ApplicationController
+class Api::TeamController < ApplicationController
   def show
   end
 
@@ -12,5 +12,8 @@ class HoleController < ApplicationController
   end
 
   def index
+    @teams = Team.all
+    render json: @teams
   end
+
 end

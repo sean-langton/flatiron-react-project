@@ -1,4 +1,4 @@
-class PlayerController < ApplicationController
+class Api::PlayerController < ApplicationController
   def show
   end
 
@@ -13,5 +13,5 @@ class PlayerController < ApplicationController
 
   def index
   end
-  
+
 end

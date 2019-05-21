@@ -1,4 +1,4 @@
-class ScoreController < ApplicationController
+class Api::ScoreController < ApplicationController
   def show
   end
 
@@ -13,5 +13,5 @@ class ScoreController < ApplicationController
 
   def index
   end
-  
+
 end

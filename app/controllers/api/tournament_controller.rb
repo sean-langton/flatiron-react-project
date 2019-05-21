@@ -1,4 +1,4 @@
-class TournamentController < ApplicationController
+class Api::TournamentController < ApplicationController
 
   def index
     @tournaments = Tournament.all

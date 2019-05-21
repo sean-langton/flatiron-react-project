@@ -1,4 +1,4 @@
-class TeamController < ApplicationController
+class Api::HoleController < ApplicationController
   def show
   end
 
@@ -13,5 +13,4 @@ class TeamController < ApplicationController
 
   def index
   end
-  
 end

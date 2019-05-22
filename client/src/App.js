@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Jumbotron>
+        <h1>Welcome To Bar Golf!</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Please Create A Tournament or Join One In Progress
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          <Button variant="primary">Create Tournament</Button>
+          <Button variant="primary">Join Tournament</Button>
+        </p>
+      </Jumbotron>
     </div>
   );
 }

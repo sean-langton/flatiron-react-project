@@ -5,13 +5,21 @@ import App from './App';
 import Tournament from './containers/TournamentContainer'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+import { Provider } from 'react-redux'
+
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render((
   <Router>
-    <React.Fragment>
-      <Route path="/" component={App} />
-      <Route path="/tournament" component={Tournament} />
-    </React.Fragment>
+    <Provider store={store}>
+      <React.Fragment>
+        <Route path="/" component={App} />
+        <Route path="/tournament" component={Tournament} />
+      </React.Fragment>
+    </Provider>
   </Router>),
   document.getElementById('root')
 );

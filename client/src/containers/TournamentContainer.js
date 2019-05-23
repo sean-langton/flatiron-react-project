@@ -3,6 +3,10 @@ import TournamentInput from '../components/tournaments/TournamentInput'
 import { connect } from 'react-redux'
 import { fetchTournaments } from  '../components/actions/tournamentActions';
 import TournamentList from '../components/tournaments/TournamentList'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 class TournamentContainer extends Component {
 
   componentDidMount() {
@@ -13,9 +17,12 @@ class TournamentContainer extends Component {
   render() {
     return (
       <div>
-        Tournament Container
-        <TournamentInput addTournament={this.props.addTournament}/>
-        <TournamentList tournaments={this.props.tournaments}/>
+        <Container>
+          <Row>
+            <Col> <TournamentInput addTournament={this.props.addTournament}/> </Col>
+            <Col> <TournamentList tournaments={this.props.tournaments}/> </Col>
+          </Row>
+        </Container>;
       </div>
     )
   }

@@ -10,4 +10,13 @@ class Api::TournamentController < ApplicationController
     render json: @tournament
   end
 
+  def new
+    binding.pry
+    @tournament = Tournament.create(tournament_params)
+    binding.pry
+  end
+
+  def tournament_params
+    params.permit(:name, :date, :entry_code, :per_team)
+  end
 end

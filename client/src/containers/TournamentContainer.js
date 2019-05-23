@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TournamentInput from '../components/tournaments/TournamentInput'
 import { connect } from 'react-redux'
-import { fetchTournaments } from  '../components/actions/tournamentActions';
+import { fetchTournaments, addTournament } from  '../components/actions/tournamentActions';
 import TournamentList from '../components/tournaments/TournamentList'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,7 +11,6 @@ class TournamentContainer extends Component {
 
   componentDidMount() {
     this.props.fetchTournaments()
-    debugger;
   }
 
   render() {
@@ -22,7 +21,7 @@ class TournamentContainer extends Component {
             <Col> <TournamentInput addTournament={this.props.addTournament}/> </Col>
             <Col> <TournamentList tournaments={this.props.tournaments}/> </Col>
           </Row>
-        </Container>;
+        </Container>
       </div>
     )
   }
@@ -31,9 +30,9 @@ const mapStateToProps = state => ({ tournaments: state.tournaments })
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTournaments: () => {
-      dispatch(fetchTournaments())
-    }
-  };
+      addTournament: (payload) => { dispatch(addTournament(payload)) },
+      fetchTournaments: () => { dispatch(fetchTournaments()) }
+  }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(TournamentContainer)

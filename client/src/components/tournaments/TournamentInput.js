@@ -18,12 +18,19 @@ export default class TournamentInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
+    debugger;
     this.props.addTournament(this.state)
+    this.setState({
+      name: '',
+      date: '',
+      per_team: 0,
+      entry_code: ''
+    })
   }
 
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.handleOnSubmit}>
         <Form.Group controlId="formBasicTournament">
           <Form.Label>Tournament Name</Form.Label><br />
           <Form.Control type="text" name="name" value={this.state.name} onChange={this.handleOnChange} placeholder="Enter Tournament Name" /><br />

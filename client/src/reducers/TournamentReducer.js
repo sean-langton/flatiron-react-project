@@ -5,10 +5,11 @@ export default function tournamentsReducer(state = {
   switch (action.type) {
     case 'LOADING_TOURNAMENTS':
       return { ...state, loading: true}
-      case 'FETCH_TOURNAMENTS':
-        console.log('Fetching Tournaments')
-        return {...state, loading: false, tournaments:action.payload}
-      default:
-        return state;
+    case 'FETCH_TOURNAMENTS':
+      return {...state, loading: false, tournaments:action.payload}
+    case 'ADD_TOURNAMENT':
+      return state
+    default:
+      return state;
   }
 };

@@ -18,7 +18,6 @@ export default class TournamentInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    debugger;
     this.props.addTournament(this.state)
     this.setState({
       name: '',

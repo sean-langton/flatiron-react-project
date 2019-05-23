@@ -10,11 +10,16 @@ export function fetchTournaments() {
 
 export function addTournament(payload) {
   console.log('Creating Tournament')
+  console.log(payload)
+  debugger;
   return (dispatch) => {
     dispatch({ type: 'CREATING_TOURNAMENT' });
-  return fetch('/api/tournament/new', {
-    method: 'post',
-    body: payload
+  return fetch('/api/tournament', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers:{
+      'Content-Type': 'application/json'
+    }
   })
   }
 }

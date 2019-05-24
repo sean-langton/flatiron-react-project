@@ -19,8 +19,8 @@ ReactDOM.render((
     <Provider store={store}>
       <React.Fragment>
         <Route path="/" component={App} />
-        <Route path="/tournaments" component={Tournament} />
-        <Route path="/tournament/" component={Hole} />
+        <Route path="/tournament" component={Tournament} />
+        <Route path="hole" component={Hole} />
       </React.Fragment>
     </Provider>
   </Router>),

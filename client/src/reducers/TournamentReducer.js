@@ -1,6 +1,9 @@
 export default function tournamentsReducer(state = {
   loading: false,
-  tournaments: []
+  tournaments: [],
+  showInput: true,
+  showIndex: true,
+  showIndividual: false
 }, action) {
   switch (action.type) {
     case 'LOADING_TOURNAMENTS':

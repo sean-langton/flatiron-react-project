@@ -18,8 +18,8 @@ class TournamentContainer extends Component {
       <div>
         <Container>
           <Row>
-            <Col> <TournamentInput addTournament={this.props.addTournament}/> </Col>
-            <Col> <TournamentList tournaments={this.props.tournaments}/> </Col>
+            <Col> <TournamentInput addTournament={this.props.addTournament} /> </Col>
+            <Col> <TournamentList tournaments={this.props.tournaments} /> </Col>
           </Row>
         </Container>
       </div>

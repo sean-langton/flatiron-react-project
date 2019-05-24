@@ -9,9 +9,6 @@ export function fetchTournaments() {
 }
 
 export function addTournament(payload) {
-  console.log('Creating Tournament')
-  console.log(payload)
-  debugger;
   return (dispatch) => {
     dispatch({ type: 'CREATING_TOURNAMENT' });
   return fetch('/api/tournament', {
@@ -20,6 +17,8 @@ export function addTournament(payload) {
     headers:{
       'Content-Type': 'application/json'
     }
-  })
-  }
+  }).then(response => {
+    return response.json()
+  }).then(payload => dispatch({ type: 'ADD_TOURNAMENT', payload }));
+  };
 }

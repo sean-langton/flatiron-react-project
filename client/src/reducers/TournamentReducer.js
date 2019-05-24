@@ -8,7 +8,7 @@ export default function tournamentsReducer(state = {
     case 'FETCH_TOURNAMENTS':
       return {...state, loading: false, tournaments:action.payload}
     case 'ADD_TOURNAMENT':
-      return state
+      return {...state, tournaments:[...state.tournaments, action.payload]}
     default:
       return state;
   }

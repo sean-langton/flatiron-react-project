@@ -20,7 +20,7 @@ ReactDOM.render((
       <React.Fragment>
         <Route path="/" component={App} />
         <Route exact path="/tournament" component={Tournament} />
-        <Route path="holes" component={Hole} />
+        <Route path="/tournament/*/hole" component={Hole} />
       </React.Fragment>
     </Provider>
   </Router>),

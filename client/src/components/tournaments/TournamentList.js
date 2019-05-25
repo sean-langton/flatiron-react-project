@@ -1,9 +1,16 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 const TournamentList = props => {
   function listOfTournaments(){
     return props.tournaments.tournaments.map((tournament,index) => {
-        return tournament.name
+        return (
+          <div>
+          <h3> {tournament.name} </h3>
+          <Button href={"tournament/"+tournament.id+"/holes"}> Manage Holes </Button>
+          <Button href={"tournament/"+tournament.id+"/teams"}> Manage Teams </Button>
+          </div>
+        )
       })
     }
 

@@ -14,7 +14,7 @@ class Api::HoleController < ApplicationController
 
   def index
     binding.pry
-    @tournament = Tournament.find(params[:tournament_id])
-    render :json => @tournament, include: 'hole'
+    @holes = Hole.all
+    render json: @holes
   end
 end

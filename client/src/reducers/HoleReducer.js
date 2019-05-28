@@ -1,4 +1,4 @@
-export default function tournamentsReducer(state = {
+export default function holeReducer(state = {
   loading: false,
   tournament: [],
   holes: []

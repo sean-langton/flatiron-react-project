@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 //import TournamentInput from '../components/tournaments/TournamentInput'
 import { connect } from 'react-redux'
 import { fetchTournament } from  '../components/actions/holeActions';
-import Hole from '../components/holes/Holes'
+import Holes from '../components/holes/Holes'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 //import Col from 'react-bootstrap/Col'
@@ -10,7 +10,6 @@ import Row from 'react-bootstrap/Row'
 class HoleContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchTournament()
     debugger;
   }
 
@@ -19,7 +18,8 @@ class HoleContainer extends Component {
       <div>
         <Container>
           <Row>
-            <Hole tournament={this.props.tournament}/>
+            {console.log('I"M IN THE HOLE CONTAINER')}
+            <Holes />
           </Row>
         </Container>
       </div>

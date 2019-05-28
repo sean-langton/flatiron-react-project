@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import tournamentsReducer from './TournamentReducer';
+import holesReducer from './HoleReducer'
 
 
 const rootReducer =  combineReducers({
-  tournaments: tournamentsReducer
+  tournaments: tournamentsReducer,
+  holes: holesReducer
 });
 
 

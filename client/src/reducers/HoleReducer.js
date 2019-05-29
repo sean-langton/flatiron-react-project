@@ -1,7 +1,7 @@
 export default function holeReducer(state = {
   loading: false,
   tournament_id: "",
-  tournament: [],
+  tournament: {},
   holes: []
 }, action) {
   switch (action.type) {
@@ -12,7 +12,6 @@ export default function holeReducer(state = {
     case 'LOADING_TOURNAMENT':
       return { ...state, loading: true}
     case 'FETCH_TOURNAMENT':
-    debugger;
       return {...state, loading: false, tournament:action.payload}
     default:
       return state;

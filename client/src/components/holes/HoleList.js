@@ -1,10 +1,9 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-
+import Jumbotron from 'react-bootstrap/Jumbotron'
 const HoleList = props => {
-  debugger;
   function listOfHoles(){
-    return props.holes.holes.map((hole,index) => {
+    return props.holes.map((hole,index) => {
         return (
           <div>
           <h3> {hole.name} </h3>

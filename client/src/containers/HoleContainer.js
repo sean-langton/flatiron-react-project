@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import TournamentInput from '../components/tournaments/TournamentInput'
 import { connect } from 'react-redux'
-import { fetchTournament } from  '../components/actions/holeActions';
+import { fetchTournament, fetchHoles } from  '../components/actions/holeActions';
 import HoleList from '../components/holes/HoleList'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,6 +11,7 @@ class HoleContainer extends Component {
 
   componentDidMount() {
     this.props.fetchTournament(this.props.tournament_id)
+    this.props.fetchHoles(this.props.tournament_id)
     debugger;
   }
 
@@ -35,7 +36,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-      fetchTournament: (payload) => { dispatch(fetchTournament(payload)) }
+      fetchHoles: (payload) => { dispatch(fetchHoles(payload)) },
+      fetchTournament: (payload) => {dispatch(fetchTournament(payload)) }
   }
 }
 

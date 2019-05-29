@@ -4,6 +4,9 @@ class CreateHoles < ActiveRecord::Migration[5.2]
       t.string :name
       t.time :start_time
       t.integer :duration
+      t.string :par
+      t.string :birdie
+      t.string :eagle
       t.references :tournament
 
       t.timestamps

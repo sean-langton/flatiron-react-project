@@ -23,6 +23,8 @@ class HoleContainer extends Component {
             <Tournament tournament={this.props.holes.tournament} />
           </Row>
           <Row>
+            <Col>
+            
             <HoleList holes={this.props.holes.holes} />
           </Row>
         </Container>

@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 2019_05_17_203358) do
     t.string "name"
     t.time "start_time"
     t.integer "duration"
+    t.string "par"
+    t.string "birdie"
+    t.string "eagle"
     t.integer "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

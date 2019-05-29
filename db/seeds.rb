@@ -12,18 +12,18 @@ tournament_list = [
 ]
 
 hole_list = [
-  ["Hole 1", "14:00", 30, 1],
-  ["Hole 2", "14:45", 30, 1],
-  ["Hole 3", "15:30", 30, 1],
-  ["Hole 4", "16:15", 30, 1],
-  ["Hole 5", "17:00", 30, 1],
-  ["Hole 6", "17:45", 30, 1],
-  ["Hole 7", "18:30", 30, 1],
-  ["Hole 8", "19:15", 30, 1],
-  ["Hole 9", "19:45", 30, 1],
-  ["Hole 10", "14:00", 30, 2],
-  ["Hole 11", "14:45", 30, 2],
-  ["Hole 12", "15:30", 30, 2]
+  ["Hole 1", "14:00", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 2", "14:45", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 3", "15:30", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 4", "16:15", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 5", "17:00", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 6", "17:45", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 7", "18:30", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 8", "19:15", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 9", "19:45", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 1],
+  ["Hole 10", "14:00", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 2],
+  ["Hole 11", "14:45", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 2],
+  ["Hole 12", "15:30", 30, "Bud Light", "Pina Colada", "Shot and 20 on Dartboard", 2]
 ]
 
 team_list = [
@@ -75,8 +75,8 @@ tournament_list.each do |name, date, per_team, entry_code|
   Tournament.create(name: name, date: date, per_team: per_team, entry_code: entry_code)
 end
 
-hole_list.each do |name, start_time, duration, tournament_id|
-  Hole.create(name: name, start_time: start_time, duration: duration, tournament_id: tournament_id)
+hole_list.each do |name, start_time, duration, par, birdie, eagle, tournament_id|
+  Hole.create(name: name, start_time: start_time, duration: duration, par: par, birdie: birdie, eagle: eagle, tournament_id: tournament_id)
 end
 
 team_list.each do |name, tournament_id|

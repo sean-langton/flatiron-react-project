@@ -2,6 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 const TournamentList = props => {
+  debugger;
   function listOfTournaments(){
     return props.tournaments.tournaments.map((tournament,index) => {
         return (

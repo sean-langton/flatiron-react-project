@@ -5,9 +5,9 @@ export default function holeReducer(state = {
 }, action) {
   switch (action.type) {
     case 'LOADING_HOLES':
-      return { ...state, loading: true, holes: []}
+      return { ...state, loading: true}
     case 'FETCH_HOLES':
-      return {...state, loading: false, holes:action.payload}
+      return {...state, loading: false, holes: action.payload}
     default:
       return state;
   }

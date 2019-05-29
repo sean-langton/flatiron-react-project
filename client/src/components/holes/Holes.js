@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Holes = props => {
-  debugger;
-
   return(
     <div>
       <h1>BALLLLLLLLLLLS</h1>

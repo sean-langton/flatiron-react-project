@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 tournament_list = [
-  ["Test Tournament", "2020-04-20", 2, "BALL"]
+  ["Test Tournament", "2020-04-20", 2, "BALL"],
+  ["Second Test Tournament", "2019-06-09", 4, "OKAY"]
 ]
 
 hole_list = [
@@ -19,7 +20,10 @@ hole_list = [
   ["Hole 6", "17:45", 30, 1],
   ["Hole 7", "18:30", 30, 1],
   ["Hole 8", "19:15", 30, 1],
-  ["Hole 9", "19:45", 30, 1]
+  ["Hole 9", "19:45", 30, 1],
+  ["Hole 10", "14:00", 30, 2],
+  ["Hole 11", "14:45", 30, 2],
+  ["Hole 12", "15:30", 30, 2]
 ]
 
 team_list = [

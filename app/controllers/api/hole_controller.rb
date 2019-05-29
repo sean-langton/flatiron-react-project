@@ -13,8 +13,7 @@ class Api::HoleController < ApplicationController
   end
 
   def index
-    binding.pry
-    @holes = Hole.all
+    @holes = Hole.where(tournament_id: params[:tournament_id])
     render json: @holes
   end
 end

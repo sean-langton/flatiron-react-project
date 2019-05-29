@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row'
 class HoleContainer extends Component {
 
   componentDidMount() {
-    debugger;
+    this.props.fetchTournament(this.props.tournament_id)
   }
 
   render() {
@@ -18,7 +18,6 @@ class HoleContainer extends Component {
       <div>
         <Container>
           <Row>
-            {console.log('I"M IN THE HOLE CONTAINER')}
             <Holes />
           </Row>
         </Container>
@@ -26,11 +25,12 @@ class HoleContainer extends Component {
     )
   }
 }
-const mapStateToProps = state => ({ tournament: state.tournament })
+
+const mapStateToProps = (state, ownProps) => ({tournament_id: ownProps.match.params.tournament_id})
 
 const mapDispatchToProps = dispatch => {
   return {
-      fetchTournament: () => { dispatch(fetchTournament()) }
+      fetchTournament: (payload) => { dispatch(fetchTournament(payload)) }
   }
 }
 

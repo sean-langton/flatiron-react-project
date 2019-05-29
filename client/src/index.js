@@ -10,9 +10,12 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk),
+));
 
 ReactDOM.render((
   <Router>
@@ -20,7 +23,7 @@ ReactDOM.render((
       <React.Fragment>
         <Route path="/" component={App} />
         <Route exact path="/tournament" component={Tournament} />
-        <Route path="/tournament/*/hole" component={Hole} />
+        <Route path={`/tournament/:tournament_id/holes`} component={Hole} />
       </React.Fragment>
     </Provider>
   </Router>),

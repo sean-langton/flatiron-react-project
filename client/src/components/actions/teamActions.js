@@ -47,3 +47,7 @@ export function deleteTeam(payload) {
     }).then(payload => dispatch({ type: 'FETCH_TEAMS', payload }));
   };
 }
+
+export function addPlayer(payload) {
+  debugger;
+}

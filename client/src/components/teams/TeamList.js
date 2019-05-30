@@ -7,11 +7,16 @@ export default class TeamList extends Component {
     this.props.deleteTeam({team_id: event.target.name, tournament_id: event.target.value})
   }
 
+  addPlayer = (event) => {
+    debugger;
+    this.props.addPlayer({name: event.name, team_id: event.team_id})
+  }
+
   listOfTeams = () => {
     return this.props.teams.map((team,index) => {
         return (
           <div key={index}>
-            <Team team={team} deleteTeam={this.handleDelete}/>
+            <Team team={team} deleteTeam={this.handleDelete} addPlayer={this.addPlayer} />
           </div>
         )
       })

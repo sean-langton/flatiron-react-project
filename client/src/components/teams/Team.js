@@ -2,6 +2,7 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
+import PlayerInput from './PlayerInput'
 
 const Team = props => {
   return (
@@ -13,6 +14,7 @@ const Team = props => {
             </ListGroup>
             <br />
             <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id}> Delete </Button>
+            <PlayerInput team_id={props.team.id} addPlayer={props.addPlayer}/>
         </Card.Body>
       </Card>
   )

@@ -6,9 +6,17 @@ class Api::TeamController < ApplicationController
   end
 
   def create
+    binding.pry
+    @team = Team.create(team_params)
+    binding.pry
+    render json: @team
   end
 
   def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    @teams = Team.where(tournament_id: params[:tournament_id])
+    render json: @teams
   end
 
   def index

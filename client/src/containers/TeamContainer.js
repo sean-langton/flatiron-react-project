@@ -25,7 +25,7 @@ class TeamContainer extends Component {
           </Row>
           <Row>
             <Col>
-            <TeamInput addTeam={this.props.addTeam} tournament_id={this.props.tournament_id} />
+            <TeamInput addTeam={this.props.addTeam} tournament_id={this.props.tournament_id} numOfPlayers={this.props.numOfPlayers}/>
             </Col>
             <Col>
             <TeamList teams={this.props.teams.teams} deleteTeam={this.props.deleteTeam}/>
@@ -40,7 +40,8 @@ class TeamContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     tournament_id: ownProps.match.params.tournament_id,
-    teams: state.teams
+    teams: state.teams,
+    numOfPlayers: state.teams.tournament.per_team
   }
 }
 const mapDispatchToProps = dispatch => {

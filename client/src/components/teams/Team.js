@@ -8,12 +8,11 @@ const Team = props => {
       <Card>
         <Card.Body>
           <Card.Title> {props.team.name}</Card.Title>
-          <Card.Text>
             <ListGroup varient="flush">
-            {props.team.players.map((player) => <ListGroup.Item> {player.name} </ListGroup.Item>)}
+            {props.team.players.map((player) => <ListGroup.Item key={player.id}> {player.name} </ListGroup.Item>)}
             </ListGroup>
-            <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id} > Delete </Button>
-          </Card.Text>
+            <br />
+            <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id}> Delete </Button>
         </Card.Body>
       </Card>
   )

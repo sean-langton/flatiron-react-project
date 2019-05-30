@@ -14,7 +14,7 @@ export default function teamReducer(state = {
     case 'FETCH_TOURNAMENT':
       return {...state, loading: false, tournament:action.payload}
     case 'ADD_TEAM':
-        return {...state, teams:[...state.holes, action.payload]}
+        return {...state, teams:[...state.teams, action.payload]}
     default:
       return state;
   }

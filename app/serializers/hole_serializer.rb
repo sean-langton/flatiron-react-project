@@ -1,4 +1,4 @@
 class HoleSerializer < ActiveModel::Serializer
-  attributes :id, :name, :start_time, :duration
+  attributes :id, :name, :start_time, :duration, :par, :birdie, :eagle
   belongs_to :tournament
 end

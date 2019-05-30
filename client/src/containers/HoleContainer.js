@@ -6,7 +6,7 @@ import HoleList from '../components/holes/HoleList'
 import Tournament from '../components/holes/Tournament'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-//import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col'
 
 class HoleContainer extends Component {
 
@@ -24,8 +24,11 @@ class HoleContainer extends Component {
           </Row>
           <Row>
             <Col>
-            
+            HoleInputs Gonna Go Here
+            </Col>
+            <Col>
             <HoleList holes={this.props.holes.holes} />
+            </Col>
           </Row>
         </Container>
       </div>

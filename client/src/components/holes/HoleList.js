@@ -1,16 +1,21 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
+import Button from 'react-bootstrap/Button'
 
 const HoleList = props => {
   function listOfHoles(){
     return props.holes.map((hole,index) => {
+      debugger;
         return (
           <div key={index}>
             <Card>
               <Card.Body>
                 <Card.Title> {hole.name}</Card.Title>
-                <Card.Text> {new Date(hole.start_time).toLocaleTimeString('en-US')} | {hole.duration} minutes </Card.Text>
+                <Card.Text>
+                  {new Date(hole.start_time).toLocaleTimeString('en-US')} | {hole.duration} minutes
+                  <Button href={"holes/"+hole.id+"/delete"}> Delete </Button>
+                </Card.Text>
               </Card.Body>
               <ListGroup className="hole-scores">
                 <ListGroup.Item> Bogey: Failed Eagle Attempt </ListGroup.Item>

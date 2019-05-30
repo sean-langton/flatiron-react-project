@@ -22,7 +22,7 @@ export function addHole(payload) {
   debugger;
   return (dispatch) => {
     dispatch({ type: 'CREATING_HOLE' });
-  return fetch(`/api/tournament/1/hole`, {
+  return fetch(`/api/tournament/${payload.tournament_id}/hole`, {
     method: 'POST',
     body: JSON.stringify(payload),
     headers:{
@@ -33,3 +33,7 @@ export function addHole(payload) {
   }).then(payload => dispatch({ type: 'ADD_HOLE', payload }));
   };
 }
+
+export function deleteHole(payload) {
+  debugger;
+  };

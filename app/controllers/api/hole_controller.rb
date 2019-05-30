@@ -14,6 +14,7 @@ class Api::HoleController < ApplicationController
   end
 
   def destroy
+    binding.pry
   end
 
   def index

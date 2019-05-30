@@ -17,3 +17,19 @@ export function fetchTournament(tournament_id) {
     }).then(payload => dispatch({ type: 'FETCH_TOURNAMENT', payload }));
   };
 }
+
+export function addHole(payload) {
+  debugger;
+  return (dispatch) => {
+    dispatch({ type: 'CREATING_HOLE' });
+  return fetch(`/api/tournament/1/hole`, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    return response.json()
+  }).then(payload => dispatch({ type: 'ADD_HOLE', payload }));
+  };
+}

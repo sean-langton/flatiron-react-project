@@ -12,7 +12,6 @@ class Api::TournamentController < ApplicationController
 
   def create
     @tournament = Tournament.create(tournament_params)
-    binding.pry
     render json: @tournament
   end
 

@@ -7,6 +7,10 @@ class Api::HoleController < ApplicationController
   end
 
   def create
+    binding.pry
+    @hole = Hole.create(hole_params)
+    binding.pry
+    render json: @hole
   end
 
   def destroy
@@ -15,5 +19,9 @@ class Api::HoleController < ApplicationController
   def index
     @holes = Hole.where(tournament_id: params[:tournament_id])
     render json: @holes
+  end
+
+  def hole_params
+    params.permit(:name, :duration, :start_time, :par, :birdie, :eagle, :tournament_id)
   end
 end

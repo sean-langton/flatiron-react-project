@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 const HoleList = props => {
-  debugger;
   function listOfHoles(){
     return props.holes.map((hole,index) => {
         return (

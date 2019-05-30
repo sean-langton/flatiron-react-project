@@ -13,9 +13,7 @@ class TeamContainer extends Component {
 
   componentDidMount() {
     this.props.fetchTournament(this.props.tournament_id)
-    debugger;
     this.props.fetchTeams(this.props.tournament_id)
-    debugger;
   }
 
   render() {

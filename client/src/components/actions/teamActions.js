@@ -1,6 +1,6 @@
 export function fetchTeams(tournament_id) {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_Teams' });
+    dispatch({ type: 'LOADING_TEAMS' });
   return fetch(`/api/tournament/${tournament_id}/team`)
     .then(response => {
       return response.json()

@@ -9,7 +9,7 @@ const Team = props => {
         <Card.Body>
           <Card.Title> {props.team.name}</Card.Title>
           <Card.Text>
-//            <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id} > Delete </Button>
+            <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id} > Delete </Button>
           </Card.Text>
         </Card.Body>
       </Card>

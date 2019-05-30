@@ -5,6 +5,7 @@ import App from './App';
 import Tournament from './containers/TournamentContainer'
 import Hole from './containers/HoleContainer'
 import Team from './containers/TeamContainer'
+import Score from './containers/ScoreContainer'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import thunk from 'redux-thunk';
@@ -26,6 +27,7 @@ ReactDOM.render((
         <Route exact path="/tournament" component={Tournament} />
         <Route path={`/tournament/:tournament_id/holes`} component={Hole} />
         <Route path={`/tournament/:tournament_id/teams`} component={Team} />
+        <Route path={`/tournament/:tournament_id/scores`} component={Score} />
       </React.Fragment>
     </Provider>
   </Router>),

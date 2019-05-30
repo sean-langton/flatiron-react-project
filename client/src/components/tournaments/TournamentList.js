@@ -9,6 +9,7 @@ const TournamentList = props => {
           <h3> {tournament.name} </h3>
           <Button href={"tournament/"+tournament.id+"/holes"}> Manage Holes </Button>
           <Button href={"tournament/"+tournament.id+"/teams"}> Manage Teams </Button>
+          <Button href={"tournament/"+tournament.id+"/scores"}> Manage Scores </Button>
           </div>
         )
       })

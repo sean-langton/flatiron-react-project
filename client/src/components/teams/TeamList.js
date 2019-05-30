@@ -8,7 +8,6 @@ export default class TeamList extends Component {
   }
 
   listOfTeams = () => {
-    debugger;
     return this.props.teams.map((team,index) => {
         return (
           <div key={index}>

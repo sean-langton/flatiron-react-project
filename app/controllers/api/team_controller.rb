@@ -13,7 +13,6 @@ class Api::TeamController < ApplicationController
 
   def index
     @teams = Team.where(tournament_id: params[:tournament_id])
-    binding.pry
     render json: @teams
   end
 

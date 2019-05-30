@@ -8,7 +8,6 @@ export default function teamReducer(state = {
     case 'LOADING_TEAMS':
       return { ...state, loading: true}
     case 'FETCH_TEAMS':
-      debugger;
       return {...state, loading: false, teams: action.payload}
     case 'LOADING_TOURNAMENT':
       return { ...state, loading: true}

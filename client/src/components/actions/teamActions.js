@@ -34,10 +34,9 @@ export function addTeam(payload) {
 }
 
 export function deleteTeam(payload) {
-  debugger;
   return (dispatch) => {
     dispatch({ type: 'DELETING_TEAM' });
-  return fetch(`/api/team/${payload.hole_id}`, {
+  return fetch(`/api/team/${payload.team_id}`, {
     method: 'DELETE',
     body: JSON.stringify(payload),
     headers:{

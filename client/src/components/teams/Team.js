@@ -9,9 +9,9 @@ const Team = props => {
         <Card.Body>
           <Card.Title> {props.team.name}</Card.Title>
           <Card.Text>
-            <ul>
-            {props.team.players.map((player) => <li> {player.name} </li>)}
-            </ul>
+            <ListGroup varient="flush">
+            {props.team.players.map((player) => <ListGroup.Item> {player.name} </ListGroup.Item>)}
+            </ListGroup>
             <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id} > Delete </Button>
           </Card.Text>
         </Card.Body>

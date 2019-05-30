@@ -1,20 +1,19 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
-
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import logo from './BarGolfLogo.png'
 function App() {
   return (
     <div className="App">
-      <Jumbotron>
-        <h1>Welcome To Bar Golf!</h1>
-        <p>
-          Please Create A Tournament or Join One In Progress
-        </p>
-        <p>
-          <Button variant="primary">Create Tournament</Button>
-          <Button variant="primary">Join Tournament</Button>
-        </p>
-      </Jumbotron>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="/">
+          <img src={logo} alt="Bar Golf Square Logo" width="50"/>
+          {'  Bar Golf'}
+        </Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="/tournament">Tournaments</Nav.Link>
+        </Nav>
+      </Navbar>
     </div>
   );
 }

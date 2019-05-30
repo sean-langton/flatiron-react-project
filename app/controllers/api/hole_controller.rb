@@ -1,6 +1,5 @@
 class Api::HoleController < ApplicationController
   def show
-    binding.pry
   end
 
   def new

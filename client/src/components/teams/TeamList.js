@@ -8,10 +8,11 @@ export default class TeamList extends Component {
   }
 
   listOfTeams = () => {
-    return this.props.teams.map((hole,index) => {
+    debugger;
+    return this.props.teams.map((team,index) => {
         return (
           <div key={index}>
-            <Team team={hole} deleteTeam={this.handleDelete}/>
+            <Team team={team} deleteTeam={this.handleDelete}/>
           </div>
         )
       })

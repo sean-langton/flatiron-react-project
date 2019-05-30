@@ -13,7 +13,9 @@ class TeamContainer extends Component {
 
   componentDidMount() {
     this.props.fetchTournament(this.props.tournament_id)
+    debugger;
     this.props.fetchTeams(this.props.tournament_id)
+    debugger;
   }
 
   render() {
@@ -28,7 +30,7 @@ class TeamContainer extends Component {
             <TeamInput addTeam={this.props.addTeam} tournament_id={this.props.tournament_id} />
             </Col>
             <Col>
-            <TeamList teams={this.props.teams.teams} deleteHole={this.props.deleteTeam}/>
+            <TeamList teams={this.props.teams.teams} deleteTeam={this.props.deleteTeam}/>
             </Col>
           </Row>
         </Container>

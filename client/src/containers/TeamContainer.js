@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import TournamentInput from '../components/tournaments/TournamentInput'
 import { connect } from 'react-redux'
-//import { fetchTournament, fetchHoles, addHole, deleteHole } from  '../components/actions/holeActions';
+import { fetchTournament, fetchTeams, addTeam, deleteTeam } from  '../components/actions/teamActions';
 import TeamList from '../components/teams/TeamList'
 import Tournament from '../components/teams/Tournament'
 import TeamInput from '../components/teams/TeamInput'
@@ -21,7 +21,7 @@ class TeamContainer extends Component {
       <div>
         <Container>
           <Row>
-            <Tournament tournament={this.props.teams.tournament} />
+           <Tournament tournament={this.props.teams.tournament} />
           </Row>
           <Row>
             <Col>

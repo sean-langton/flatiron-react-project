@@ -7,9 +7,7 @@ class Api::HoleController < ApplicationController
   end
 
   def create
-    binding.pry
     @hole = Hole.create(hole_params)
-    binding.pry
     render json: @hole
   end
 

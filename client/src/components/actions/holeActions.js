@@ -19,7 +19,6 @@ export function fetchTournament(tournament_id) {
 }
 
 export function addHole(payload) {
-  debugger;
   return (dispatch) => {
     dispatch({ type: 'CREATING_HOLE' });
   return fetch(`/api/tournament/${payload.tournament_id}/hole`, {
@@ -36,4 +35,16 @@ export function addHole(payload) {
 
 export function deleteHole(payload) {
   debugger;
+  return (dispatch) => {
+    dispatch({ type: 'DELETING_HOLE' });
+  return fetch(`/api/hole/${payload.hole_id}`, {
+    method: 'DELETE',
+    body: JSON.stringify(payload),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+      return response.json()
+    }).then(payload => dispatch({ type: 'FETCH_HOLES', payload }));
   };
+}

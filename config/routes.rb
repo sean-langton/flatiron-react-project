@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     end
     resources :player, only: [:show, :new, :create, :destroy, :index]
     resources :score, only: [:show, :new, :create, :destroy, :index]
+    resources :hole, only: [:destroy]
   end
 end

@@ -48,7 +48,7 @@ const mapDispatchToProps = dispatch => {
       fetchHoles: (payload) => { dispatch(fetchHoles(payload)) },
       fetchTournament: (payload) => {dispatch(fetchTournament(payload)) },
       addHole: (payload) => {dispatch(addHole(payload)) },
-//      deleteHole: (payload) => {dispatch(deleteHole(payload)) }
+      deleteHole: (payload) => {dispatch(deleteHole(payload)) }
   }
 }
 

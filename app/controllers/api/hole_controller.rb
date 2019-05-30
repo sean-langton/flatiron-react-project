@@ -12,7 +12,10 @@ class Api::HoleController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    @hole = Hole.find(params[:id])
+    @hole.destroy
+    @holes = Hole.where(tournament_id: params[:tournament_id])
+    render json: @holes
   end
 
   def index

@@ -15,9 +15,6 @@ export default function holeReducer(state = {
       return {...state, loading: false, tournament:action.payload}
     case 'ADD_HOLE':
         return {...state, holes:[...state.holes, action.payload]}
-    case 'DELETE_HOLE':
-        debugger;
-        return {...state, holes: action.payload}
     default:
       return state;
   }

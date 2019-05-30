@@ -1,23 +1,27 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button'
+import React, { Component } from 'react';
 import Hole from './Hole'
-const HoleList = props => {
-  function listOfHoles(){
-    return props.holes.map((hole,index) => {
+
+export default class HoleList extends Component {
+
+  handleDelete = (event) => {
+    debugger;
+    this.props.deleteHole({hole_id: event.target.name, tournament_id: event.target.value})
+  }
+
+  listOfHoles = () => {
+    return this.props.holes.map((hole,index) => {
         return (
           <div key={index}>
-            <Hole hole={hole}/>
+            <Hole hole={hole} deleteHole={this.handleDelete}/>
           </div>
         )
       })
     }
-
-  return (
-    <div>
-      {listOfHoles()}
-    </div>
-  )
-
+  render() {
+    return (
+      <div>
+        {this.listOfHoles()}
+      </div>
+    )
+  }
 }
-
-export default HoleList

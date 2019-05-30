@@ -9,7 +9,7 @@ export default class TeamList extends Component {
 
   addPlayer = (event) => {
     debugger;
-    this.props.addPlayer({name: event.name, team_id: event.team_id})
+    this.props.addPlayer({name: event.name, team_id: event.team_id, tournament_id: event.tournament_id})
   }
 
   listOfTeams = () => {

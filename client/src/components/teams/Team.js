@@ -14,7 +14,7 @@ const Team = props => {
             </ListGroup>
             <br />
             <Button onClick={props.deleteTeam} name={props.team.id} value={props.team.tournament.id}> Delete </Button>
-            <PlayerInput team_id={props.team.id} addPlayer={props.addPlayer}/>
+            <PlayerInput team_id={props.team.id} addPlayer={props.addPlayer} tournament_id={props.team.tournament.id}/>
         </Card.Body>
       </Card>
   )

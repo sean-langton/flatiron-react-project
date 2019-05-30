@@ -5,7 +5,8 @@ export default class PlayerInput extends Component {
 
   state = {
     name: '',
-    team_id: this.props.team_id
+    team_id: this.props.team_id,
+    tournament_id: this.props.tournament_id
   }
 
   handleOnChange = (event) => {
@@ -19,7 +20,8 @@ export default class PlayerInput extends Component {
     this.props.addPlayer(this.state)
     this.setState({
       name: '',
-      team_id: this.props.team_id
+      team_id: this.props.team_id,
+      tournament_id: this.props.tournament_id
     })
   }
 

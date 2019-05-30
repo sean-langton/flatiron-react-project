@@ -49,5 +49,16 @@ export function deleteTeam(payload) {
 }
 
 export function addPlayer(payload) {
-  debugger;
+  return (dispatch) => {
+    dispatch({ type: 'CREATING_PLAYER' });
+  return fetch('/api/player', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    return response.json()
+  }).then(payload => dispatch({ type: 'FETCH_TEAMS', payload }));
+  };
 }

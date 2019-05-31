@@ -6,9 +6,7 @@ class Api::TeamController < ApplicationController
   end
 
   def create
-    binding.pry
     @team = Team.create(team_params)
-    binding.pry
     render json: @team
   end
 

@@ -21,7 +21,6 @@ export default class HoleInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    debugger;
     this.props.addHole(this.state)
     this.setState({
       name: '',

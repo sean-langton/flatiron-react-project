@@ -17,6 +17,10 @@ class Api::PlayerController < ApplicationController
   end
 
   def index
+    binding.pry
+    @players = Tournament.find(params[:tournament_id]).players
+    binding.pry
+    render json: @players
   end
 
   def player_params

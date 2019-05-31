@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import { fetchTournament} from  '../components/actions/scoreActions';
+import { fetchHoles, fetchPlayers } from  '../components/actions/scoreActions';
+import ScoreInput from '../components/scores/ScoreInput'
 class ScoreContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchTournament(this.props.tournament_id)
+    this.props.fetchHoles(this.props.tournament_id)
+    this.props.fetchPlayers(this.props.tournament_id)
   }
 
   render() {
@@ -14,10 +16,7 @@ class ScoreContainer extends Component {
       <div>
         <Container>
           <Row>
-           Team Selectors Go Here
-          </Row>
-          <Row>
-            Scoreboard Goes Here
+           <ScoreInput players={this.props.scores.players} holes={this.props.scores.holes}/>
           </Row>
         </Container>
       </div>
@@ -28,11 +27,13 @@ class ScoreContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     tournament_id: ownProps.match.params.tournament_id,
+    scores: state.scores
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-      fetchTournament: (payload) => {dispatch(fetchTournament(payload)) },
+      fetchHoles: (payload) => {dispatch(fetchHoles(payload)) },
+      fetchPlayers: (payload) => {dispatch(fetchPlayers(payload)) }
   }
 }
 

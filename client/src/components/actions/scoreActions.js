@@ -27,3 +27,18 @@ export function fetchScores(tournament_id) {
     }).then(payload => dispatch({ type: 'FETCH_SCORES', payload }));
   };
 }
+
+export function addScore(payload) {
+  return (dispatch) => {
+    dispatch({ type: 'CREATING_SCORE' });
+  return fetch('/api/score', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    return response.json()
+  }).then(payload => dispatch({ type: 'FETCH_SCORES', payload }));
+  };
+}

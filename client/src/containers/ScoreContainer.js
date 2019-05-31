@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { fetchHoles, fetchPlayers, fetchScores } from  '../components/actions/scoreActions';
+import { fetchHoles, fetchPlayers, fetchScores, addScore } from  '../components/actions/scoreActions';
 import ScoreInput from '../components/scores/ScoreInput'
 import Scores from '../components/scores/Scores'
 class ScoreContainer extends Component {
@@ -20,7 +20,7 @@ class ScoreContainer extends Component {
         <Container>
           <Row>
           <Col>
-           <ScoreInput players={this.props.scores.players} holes={this.props.scores.holes} addScore={this.props.addScore}/>
+           <ScoreInput players={this.props.scores.players} holes={this.props.scores.holes} addScore={this.props.addScore} tournament_id={this.props.tournament_id} fetchScores={this.props.fetchScores}/>
           </Col>
           <Col>
             <Scores players={this.props.scores.players} holes={this.props.scores.holes} scores={this.props.scores.scores}/>

@@ -14,7 +14,6 @@ export default class Scores extends Component {
     }
 
   render() {
-    debugger;
     return (
       <div>
         {this.listOfHoles()}

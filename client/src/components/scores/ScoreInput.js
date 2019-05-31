@@ -4,18 +4,18 @@ import Button from 'react-bootstrap/Button'
 export default class ScoreInput extends Component {
 
   state = {
-    holeId: "",
-    playerId: "",
+    holeId: "1",
+    playerId: "1",
     bogey: "",
     par: "",
     birdie: "",
     eagle: "",
-    score: ""
+    score: "",
+    tournament_id: this.props.tournament_id
   }
 
   handleHoleChange = (event) => {
     let hole = this.props.holes.filter(hole => hole.id == event.target.value)[0]
-    debugger;
     this.setState({
       holeId: hole.id,
       bogey: "Failed Eagle Attempt",
@@ -39,12 +39,16 @@ export default class ScoreInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    debugger;
     this.props.addScore(this.state)
     this.setState({
-      holeId: 0,
-      playerId: 0,
-      score: 0
+      holeId: "1",
+      playerId: "1",
+      bogey: "",
+      par: "",
+      birdie: "",
+      eagle: "",
+      score: "",
+      tournament_id: this.props.tournament_id
     })
   }
 

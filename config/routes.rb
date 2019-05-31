@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :player, only: [:show, :new, :create, :destroy, :index]
     resources :hole, only: [:destroy]
     resources :team, only: [:destroy]
+    resources :score, only: [:create]
   end
 end

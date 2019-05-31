@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import { fetchHoles, fetchPlayers } from  '../components/actions/scoreActions';
+import Col from 'react-bootstrap/Col'
+import { fetchHoles, fetchPlayers, fetchScores } from  '../components/actions/scoreActions';
 import ScoreInput from '../components/scores/ScoreInput'
+import Scores from '../components/scores/Scores'
 class ScoreContainer extends Component {
 
   componentDidMount() {
     this.props.fetchHoles(this.props.tournament_id)
     this.props.fetchPlayers(this.props.tournament_id)
+    this.props.fetchScores(this.props.tournament_id)
   }
 
   render() {
@@ -16,7 +19,12 @@ class ScoreContainer extends Component {
       <div>
         <Container>
           <Row>
-           <ScoreInput players={this.props.scores.players} holes={this.props.scores.holes}/>
+          <Col>
+           <ScoreInput players={this.props.scores.players} holes={this.props.scores.holes} addScore={this.props.addScore}/>
+          </Col>
+          <Col>
+            <Scores players={this.props.scores.players} holes={this.props.scores.holes} scores={this.props.scores.scores}/>
+          </Col>
           </Row>
         </Container>
       </div>
@@ -33,7 +41,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
       fetchHoles: (payload) => {dispatch(fetchHoles(payload)) },
-      fetchPlayers: (payload) => {dispatch(fetchPlayers(payload)) }
+      fetchPlayers: (payload) => {dispatch(fetchPlayers(payload)) },
+      fetchScores: (payload) => {dispatch(fetchScores(payload)) },
+      addScore: (payload) => {dispatch(addScore(payload)) }
   }
 }
 

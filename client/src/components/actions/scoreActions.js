@@ -17,3 +17,13 @@ export function fetchPlayers(tournament_id) {
     }).then(payload => dispatch({ type: 'FETCH_PLAYERS', payload }));
   };
 }
+
+export function fetchScores(tournament_id) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_SCORES' });
+  return fetch(`/api/tournament/${tournament_id}/score`)
+    .then(response => {
+      return response.json()
+    }).then(payload => dispatch({ type: 'FETCH_SCORES', payload }));
+  };
+}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import ListGroup from 'react-bootstrap/ListGroup'
 export default class ScoreInput extends Component {
 
   state = {
@@ -32,8 +31,15 @@ export default class ScoreInput extends Component {
     });
   }
 
+  handleScore = (event) => {
+    this.setState({
+      score: event.target.value
+    });
+  }
+
   handleOnSubmit = (event) => {
     event.preventDefault();
+    debugger;
     this.props.addScore(this.state)
     this.setState({
       holeId: 0,
@@ -41,6 +47,7 @@ export default class ScoreInput extends Component {
       score: 0
     })
   }
+
   listPlayers = () => {
     return this.props.players.map((player,index) => {
         return (
@@ -65,15 +72,17 @@ export default class ScoreInput extends Component {
           {this.listHoles()}
         </Form.Control>
         <Form.Label> Select Player </Form.Label>
-        <Form.Control as="select" name="playerId" value={this.state.holeId} onChange={this.handlePlayerChange} >
+        <Form.Control as="select" name="playerId" onChange={this.handlePlayerChange} >
           {this.listPlayers()}
         </Form.Control>
-        <ListGroup className="hole-scores">
-          <ListGroup.Item> Bogey: {this.state.bogey} </ListGroup.Item>
-          <ListGroup.Item> Par: {this.state.par} </ListGroup.Item>
-          <ListGroup.Item> Birdie: {this.state.birdie} </ListGroup.Item>
-          <ListGroup.Item> Eagle: {this.state.eagle} </ListGroup.Item>
-        </ListGroup>
+        <fieldset>
+        <Form.Group>
+          <Form.Check type="radio" action value={1} name="scores" onClick={this.handleScore} label={`Bogey: ${this.state.bogey}`} />
+          <Form.Check type="radio" action value={0} name="scores" onClick={this.handleScore} label={`Par: ${this.state.par}`} />
+          <Form.Check type="radio" action value={-1} name="scores" onClick={this.handleScore} label={`Birdie: ${this.state.birdie}`} />
+          <Form.Check type="radio" action value={-2} name="scores"onClick={this.handleScore} label={`Eagle: ${this.state.eagle}`} />
+        </Form.Group>
+        </fieldset>
         <Button variant="primary" type="submit">
           Submit
         </Button>

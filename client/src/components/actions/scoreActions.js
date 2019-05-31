@@ -39,6 +39,6 @@ export function addScore(payload) {
     }
   }).then(response => {
     return response.json()
-  }).then(payload => dispatch({ type: 'FETCH_SCORES', payload }));
+  }).then(payload => dispatch({ type: 'ADD_SCORE', payload }));
   };
 }

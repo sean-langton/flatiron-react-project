@@ -18,6 +18,9 @@ export default function scoreReducer(state = {
       return { ...state, loading: true}
     case 'FETCH_SCORES':
       return {...state, loading: false, scores:action.payload}
+    case 'ADD_SCORE':
+      debugger;
+      return {...state, loading: false, scores:[...state.holes, action.payload]}
     default:
       return state;
   }

@@ -7,12 +7,10 @@ class Api::ScoreController < ApplicationController
   end
 
   def create
-    binding.pry
     @score = Score.find_or_create_by(player_id: score_params[:playerId], hole_id: score_params[:holeId])
     @score.score = score_params[:score]
     @score.save
-    @scores = Tournament.find(params[:tournament_id]).scores
-    render json: @scores
+    render json: @score
   end
 
   def destroy

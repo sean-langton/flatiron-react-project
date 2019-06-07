@@ -1,0 +1,27 @@
+{
+  "name": "flatiron-react-project",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean-langton/flatiron-react-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sean-langton/flatiron-react-project/issues"
+  },
+  "homepage": "https://github.com/sean-langton/flatiron-react-project#readme"
+}

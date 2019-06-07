@@ -8,6 +8,7 @@
     "test": "test"
   },
   "dependencies": {
+    "react-scripts": "^3.0.1",
     "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {},

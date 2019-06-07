@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/sean-langton/flatiron-react-project/issues"
   },
-  "homepage": "https://github.com/sean-langton/flatiron-react-project#readme"
+  "homepage": "https://github.com/sean-langton/flatiron-react-project#readme",
+  "engines": {
+    "node": "11.9"
+  }
 }

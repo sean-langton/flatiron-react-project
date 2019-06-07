@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/sean-langton/flatiron-react-project#readme",
   "engines": {
+    "npm": "6.9.0",
     "node": "11.9"
   }
 }
